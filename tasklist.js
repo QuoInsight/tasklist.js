@@ -11,7 +11,7 @@
            + " FROM Win32_Process WHERE Name IS NOT NULL ";
 
   argv = WScript.Arguments;
-  if (argv.length > 0) {
+  if (argv.length > 0 && argv(0).length > 0) {
     if ( isNaN(argv(0)) ) {
       // wmiQuery = wmiQuery + " AND Name LIKE '" + argv(0) + "'";
       var pid = getPidByWindowTitle(argv(0));
